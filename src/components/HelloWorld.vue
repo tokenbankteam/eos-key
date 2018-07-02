@@ -4,14 +4,14 @@
       <a  class="logo"  href="https://www.mytokenpocket.vip/"><img src="https://dapp.mytokenpocket.vip/TokenPocket-logo-h.png"></a> 
       <span class="title">EOS公钥私钥生成器</span>
     </h2>
-    <p>本工具用来随机生成一组EOS公钥私钥，生成过程可断网离线操作。</p>
+    <p>本工具用来随机生成一组EOS公钥私钥，生成过程可断网离线操作，<a href="https://github.com/tokenbankteam/eos-key" target="_blank">代码已开源</a>。</p>
     <p><strong>请一定注意记录并保管好您的私钥信息</strong></p>
     <button @click="generate">生成EOS公钥和私钥</button>
     <div v-if="privateKey">
       <p>公钥: {{publicKey}}</p>
       <p>私钥: {{privateKey}}</p>
     </div>
-    
+    <a class="ribbon" target="_blank" href="https://github.com/tokenbankteam/eos-key/"><img style="position: absolute; top: 0; left: 0; border: 0; width: 100px" src="https://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
   </div>
 </template>
 
@@ -25,9 +25,6 @@ export default {
       privateKey: '',
       publicKey: ''
     }
-  },
-  mounted() {
-    
   },
   methods: {
     generate() {
@@ -93,7 +90,10 @@ p {
   word-wrap: break-word;
 }
 
-a {
-  color: #42b983;
+
+@media (max-width: 760px) {
+  .ribbon {
+    display: none;
+  }
 }
 </style>
